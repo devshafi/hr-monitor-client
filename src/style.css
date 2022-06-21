@@ -1,0 +1,96 @@
+/* root */
+:root {
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+  --clr-primary: #0d6efd;
+  --clr-menu:#0f0f0f
+}
+
+/* file upload */
+.file-input {
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  border: none;
+  text-transform: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.logo {
+  width: 100px;
+}
+#side-nav {
+  background-color: var(--clr-white);
+  min-width: 250px;
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100vh;
+  z-index: 3;
+}
+
+.side-nav-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  /* z-index: -10; */
+}
+
+#side-nav.active {
+  margin-left: -250px;
+}
+
+.sidebar li a {
+  color: var(--clr-black);
+}
+
+/*main container */
+.content {
+  margin-left: 250px;
+  transition: all 0.2s ease-in-out;
+}
+
+.content.active-content {
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 776px) {
+  #side-nav {
+    margin-left: -250px;
+  }
+  #side-nav.active {
+    margin-left: 0px;
+  }
+  .content {
+    margin-left: 0px;
+  }
+  .side-nav-wrapper {
+    inset: 0;
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+.nav-item {
+  text-decoration: none;
+  padding: 8px 0px;
+}
+
+/* menu */
+.menu {
+  cursor: pointer;
+  color: var(--clr-menu);
+}
+
+/* router link active class */
+.active {
+  background-color: var(--clr-primary);
+  border-radius: 4px;
+  color: #fff !important;
+}
