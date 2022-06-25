@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Col, Form, Row, Card, Spinner } from "react-bootstrap";
+import { Button, Form, Card, Spinner } from "react-bootstrap";
 import { validateUserForm } from "../../../utils/formValidation/validator";
 import Toaster from "../../shared/Toaster";
 import { addEmployee } from "../../../api/employee";
@@ -60,65 +60,59 @@ export default function UserForm() {
 
     return (
         <>
-            <Row >
-                <Col sm={true} md={5} xxl={4} >
-                    <Card className="p-4">
-                        <Form >
-                            <Form.Group className="mb-3" controlId="firstName">
-                                <Form.Label>First Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="firstName"
-                                    placeholder="Ex-John"
-                                    value={user.firstName}
-                                    onChange={handleOnChange}
-                                    isInvalid={!!errors.firstName}
-                                />
-                                <Form.Control.Feedback type="invalid">
-                                    {errors.firstName}
-                                </Form.Control.Feedback>
-                            </Form.Group>
+            <Card className="p-4" style={{ maxWidth: "500px" }} >
+                <Form >
+                    <Form.Group className="mb-3" controlId="firstName">
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="firstName"
+                            placeholder="Ex-John"
+                            value={user.firstName}
+                            onChange={handleOnChange}
+                            isInvalid={!!errors.firstName}
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            {errors.firstName}
+                        </Form.Control.Feedback>
+                    </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="lastName">
-                                <Form.Label>Last Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    name="lastName"
-                                    placeholder="Ex-Doe"
-                                    value={user.lastName}
-                                    onChange={handleOnChange}
-                                    isInvalid={!!errors.lastName}
-                                />
-                                <Form.Control.Feedback type="invalid">
-                                    {errors.lastName}
-                                </Form.Control.Feedback>
+                    <Form.Group className="mb-3" controlId="lastName">
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="lastName"
+                            placeholder="Ex-Doe"
+                            value={user.lastName}
+                            onChange={handleOnChange}
+                            isInvalid={!!errors.lastName}
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            {errors.lastName}
+                        </Form.Control.Feedback>
 
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="email">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control
-                                    type="email"
-                                    name="email"
-                                    placeholder="johndoe@example.com"
-                                    value={user.email}
-                                    onChange={handleOnChange}
-                                    isInvalid={!!errors.email}
-                                />
-                                <Form.Control.Feedback type="invalid">
-                                    {errors.email}
-                                </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="email">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                            type="email"
+                            name="email"
+                            placeholder="johndoe@example.com"
+                            value={user.email}
+                            onChange={handleOnChange}
+                            isInvalid={!!errors.email}
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            {errors.email}
+                        </Form.Control.Feedback>
 
-                            </Form.Group>
-                            <Button variant="primary" type="submit" disabled={loading}  onClick={handleSubmit}>
-                                Submit
-                                {loading && <Spinner animation="border" role="status" variant="light" size="sm" className="mx-2" />}
-                            </Button>
-                        </Form>
-                    </Card>
-
-                </Col>
-
-            </Row>
+                    </Form.Group>
+                    <Button variant="primary" type="submit" disabled={loading} onClick={handleSubmit}>
+                        Submit
+                        {loading && <Spinner animation="border" role="status" variant="light" size="sm" className="mx-2" />}
+                    </Button>
+                </Form>
+            </Card>
 
             {
                 showToast &&
