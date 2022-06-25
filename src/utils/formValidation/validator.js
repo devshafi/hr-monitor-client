@@ -2,9 +2,8 @@
 // eslint-disable-next-line no-useless-escape
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const letterRegex = /^[a-zA-Z ]*$/;
-// required user object from create user form
-export const validateUserForm = (user) => {
 
+export const validateUserForm = (user) => {
     const { firstName, lastName, email } = user;
     const allErrors = {};
     if (!firstName || firstName === "") allErrors.firstName = "Please enter the first name"
@@ -17,7 +16,6 @@ export const validateUserForm = (user) => {
 
 
 export const validateEmailForm = (email) => {
-
     const { subject, body } = email;
     const allErrors = {};
     if (!subject || subject === "") allErrors.subject = "Subject is mandatory"
