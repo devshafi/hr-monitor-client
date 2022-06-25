@@ -1,4 +1,4 @@
-import {  Pagination } from "react-bootstrap";
+import { Pagination } from "react-bootstrap";
 
 
 export default function UsersPagination(props) {
@@ -13,14 +13,14 @@ export default function UsersPagination(props) {
             <p className="me-4 text-muted" >Showing {currentPage} of {totalPages}</p>
             <Pagination >
                 <Pagination.Prev
-                    onClick={() => props.changePage(currentPage - 1)}
                     disabled={currentPage === 1}
+                    onClick={() => props.changePage(currentPage - 1)}
                 />
-                
+
                 <Pagination.Next
-                    onClick={() => props.changePage(currentPage + 1)}
                     disabled={currentPage === totalPages}
                     className="ms-3"
+                    onClick={() => props.changePage(currentPage + 1)}
                 />
             </Pagination>
         </div>

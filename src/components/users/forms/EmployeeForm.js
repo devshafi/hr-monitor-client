@@ -109,7 +109,7 @@ export default function UserForm() {
                                 </Form.Control.Feedback>
 
                             </Form.Group>
-                            <Button onClick={handleSubmit} variant="primary" type="submit" disabled={loading}>
+                            <Button variant="primary" type="submit" disabled={loading}  onClick={handleSubmit}>
                                 Submit
                                 {loading && <Spinner animation="border" role="status" variant="light" size="sm" className="mx-2" />}
                             </Button>

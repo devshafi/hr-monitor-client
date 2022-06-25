@@ -34,7 +34,7 @@ export default function SideBar(props) {
             className={`sidebar border-end ${props.active ? "active" : ""}`} id="side-nav">
             <div className="d-flex justify-content-between border-bottom mx-4 mt-1 p-3 ">
                 <img src={logo} alt="HR Monitor" className="logo" />
-                <FaBars onClick={props.toggleActive} className="menu d-md-none" />
+                <FaBars className="menu d-md-none" onClick={props.toggleActive} />
             </div>
 
             <Nav as="ul" className="d-flex flex-column m-4" onClick={handleNavClick} >

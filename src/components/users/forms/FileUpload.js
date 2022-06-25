@@ -64,7 +64,8 @@ export default function FileUpload({
                             <Button
                                 className="mt-4"
                                 variant="primary"
-                                onClick={handleInputBtnClick}>
+                                onClick={handleInputBtnClick}
+                            >
                                 {file?.size ? "Inserted" : "Insert CSV"}
                             </Button>
                             <input
@@ -90,7 +91,7 @@ export default function FileUpload({
                                 <Button onClick={() => removeFile(file.name)} variant="danger" disabled={loading}>
                                     Remove
                                 </Button>
-                                <Button onClick={handleFileUpload} className="mx-2" disabled={loading}>
+                                <Button className="mx-2" disabled={loading} onClick={handleFileUpload} >
                                     Upload {loading && <Spinner animation="border" role="status" variant="light" size="sm" className="mx-2" />}
                                 </Button>
                             </div>
