@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap"
 export default function TableRows(props) {
 
     const tableRows = props.employees.map(employee => {
-        
+
         const isSelected = props.selectedEmployees.some(user => user.id === employee.id);
 
         return (
@@ -23,9 +23,5 @@ export default function TableRows(props) {
         )
     })
 
-    return (
-        <>
-            {tableRows}
-        </>
-    )
+    return tableRows;
 }

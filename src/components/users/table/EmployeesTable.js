@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Col, Row, Table, Spinner } from "react-bootstrap";
+import { Button, Table, Spinner } from "react-bootstrap";
 import Pagination from "./Pagination";
 import TableRows from "./TableRows";
 import useEmployees from "./../../../hooks/useEmployees";

@@ -10,7 +10,7 @@ export default function UsersPagination(props) {
 
     return (
         <div className="d-flex align-items-center justify-content-end">
-            <p className="me-4 text-muted" >Showing {currentPage} of {totalPages}</p>
+            <p className="me-4 fs-6 text-muted" >Showing {currentPage} of {totalPages}</p>
             <PaginationBs >
                 <PaginationBs.Prev
                     disabled={currentPage === 1}
