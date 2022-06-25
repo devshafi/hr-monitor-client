@@ -1,7 +1,7 @@
 import { Pagination as PaginationBs } from "react-bootstrap";
 
 
-export default function UsersPagination(props) {
+export default function Pagination(props) {
 
     const totalCount = props.totalCount;
     const limit = props.limit;
