@@ -1,4 +1,4 @@
-import { Pagination } from "react-bootstrap";
+import { Pagination as PaginationBs } from "react-bootstrap";
 
 
 export default function UsersPagination(props) {
@@ -11,18 +11,18 @@ export default function UsersPagination(props) {
     return (
         <div className="d-flex align-items-center justify-content-end">
             <p className="me-4 text-muted" >Showing {currentPage} of {totalPages}</p>
-            <Pagination >
-                <Pagination.Prev
+            <PaginationBs >
+                <PaginationBs.Prev
                     disabled={currentPage === 1}
                     onClick={() => props.changePage(currentPage - 1)}
                 />
 
-                <Pagination.Next
+                <PaginationBs.Next
                     disabled={currentPage === totalPages}
                     className="ms-3"
                     onClick={() => props.changePage(currentPage + 1)}
                 />
-            </Pagination>
+            </PaginationBs>
         </div>
 
     )
