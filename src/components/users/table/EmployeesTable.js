@@ -28,6 +28,7 @@ export default function EmployeesTable() {
         setPaginationData(prevData => ({ ...prevData, offset: pageNo }))
     }
 
+    // reset states after sending email
     const handleSuccessCb = () => {
         setShowEmailForm(false);
         setSelectedEmployees([]);
@@ -36,56 +37,50 @@ export default function EmployeesTable() {
     return (
 
         <>
-            <Row className="flex-column">
-
-                {loading && <Spinner variant="primary" animation="border" className="align-self-center mt-4" />}
-                {!loading && error && <p>Something went wrong</p>}
-                {!loading && !error && employees?.length === 0 && <p>No data found!</p>}
-                {
-                    !loading && !error && employees?.length > 0 &&
-                    (
-                        <>
-                            <Col >
-
-                                <Table responsive striped bordered hover size="sm">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Email</th>
-                                            <th>Send Email </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <TableRows
-                                            employees={employees}
-                                            selectedEmployees={selectedEmployees}
-                                            toggleSendMailCheckbox={toggleSendMailCheckbox}
-                                        />
-                                    </tbody>
-                                </Table>
-                            </Col>
-                            <Col >
-                                <Pagination {...paginationData} changePage={handlePageChange} totalCount={totalCount} />
-                                {selectedEmployees.length > 0 && (
-                                    <Button onClick={() => setShowEmailForm(true)} >Send Email (selected {selectedEmployees.length})</Button>
-                                )}
-                            </Col>
-                        </>
-                    )
-
-                }
-            </Row>
-
+            {loading && <div className="text-center " ><Spinner variant="primary" animation="border" /></div>}
+            {!loading && error && <p>Something went wrong!</p>}
+            {!loading && !error && employees?.length === 0 && <p>No data found!</p>}
             {
-                <EmailForm
-                    show={showEmailForm}
-                    selectedEmployees={selectedEmployees}
-                    handleClose={() => setShowEmailForm(false)}
-                    onSuccess={handleSuccessCb}
-                />
+                !loading && !error && employees?.length > 0 &&
+                (
+                    <>
+                        <Table responsive striped bordered hover size="sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Send Email </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <TableRows
+                                    employees={employees}
+                                    selectedEmployees={selectedEmployees}
+                                    toggleSendMailCheckbox={toggleSendMailCheckbox}
+                                />
+                            </tbody>
+                        </Table>
+
+                        <Pagination {...paginationData} changePage={handlePageChange} totalCount={totalCount} />
+
+                        {selectedEmployees.length > 0 && (
+                            <Button onClick={() => setShowEmailForm(true)} >Send Email (selected {selectedEmployees.length})</Button>
+                        )}
+
+                    </>
+                )
+
             }
+
+            <EmailForm
+                show={showEmailForm}
+                selectedEmployees={selectedEmployees}
+                handleClose={() => setShowEmailForm(false)}
+                onSuccess={handleSuccessCb}
+            />
+
 
         </>
 
