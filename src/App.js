@@ -1,4 +1,4 @@
-import Dashboard from "./components/navigation/Dashboard";
+import Dashboard from './components/Dashboard';
 function App() {
   return (
     <>
