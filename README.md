@@ -6,7 +6,7 @@ In the project directory, at first run:
 - Provide the backend server URL in `api_client.js` file. The location of the file is ***src>client>api_client.js*** 
 
 ```js
-//change based on your backend server url.
+//change based on your backend server URL.
 const client = axios.create({
     baseURL: "http://localhost:4000"
 });
