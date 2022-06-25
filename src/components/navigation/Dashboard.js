@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import AppRoutes from "../routes/AppRoutes";
-import AppNavbar from "./AppNavbar";
+import Navbar from "./Navbar";
 import SideBar from "./SideBar";
 
 
@@ -19,7 +19,7 @@ export default function Dashboard() {
             
             <SideBar active={active} toggleActive={toggleActive} />
             <div className={`content ${active ? "active-content" : ""}`}>
-                <AppNavbar toggleActive={toggleActive} />
+                <Navbar toggleActive={toggleActive} />
                 <div className="p-3">
                     <AppRoutes />
                 </div>
