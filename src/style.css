@@ -1,7 +1,8 @@
 :root {
   --clr-black: #000000;
   --clr-white: #ffffff;
-  --clr-menu:#0f0f0f
+  --clr-menu: #0f0f0f;
+  --clr-primary: #0d6efd;
 }
 
 /* file upload input */
@@ -51,7 +52,6 @@
   padding: 8px 0px;
 }
 
-
 /*main container */
 .content {
   margin-left: 250px;
@@ -61,7 +61,6 @@
 .content.active-content {
   margin-left: 0px;
 }
-
 
 /* media queries */
 @media screen and (max-width: 776px) {
@@ -80,7 +79,6 @@
     z-index: 2;
   }
 }
-
 
 /* menu */
 .menu {
