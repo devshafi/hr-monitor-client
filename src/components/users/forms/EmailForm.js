@@ -109,7 +109,7 @@ export default function EmailForm(props) {
                                 {errors.body}
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Button disabled={loading} variant="primary" onClick={handleSubmit}>
+                        <Button disabled={loading} type="submit" variant="primary" onClick={handleSubmit}>
                             Send Email
                             {loading && <Spinner animation="border" role="status" variant="light" size="sm" className="mx-2" />}
                         </Button>
